@@ -16,6 +16,9 @@ public class Main {
 	public static String[] namei = new String[300];
 	public static String[] vars = new String[300];
 	public static String[] names = new String[300];
+	public static String[] keyWords = new String[300];
+	public static String[] keyWordsType = new String[300];
+	public static String[] keyWordsMeaning = new String[300];
 
 	public static void main(String[] args) {
 		String s = "";
@@ -70,6 +73,7 @@ public class Main {
 		s = "";
 		String[] cmds = new String[200];
 		for (int i = 0; i < split2.length; i++) {
+			split2[i] = split2[i].trim();
 			int[] varPlaces = findAll(split2[i], '>');
 			if (varPlaces != null) {
 				for (int j = 0; j < varPlaces.length; j++) {
@@ -98,10 +102,11 @@ public class Main {
 					}
 					String v = findVar(y);
 					split2[i] = split2[i].replaceAll(">"+y, v);
-					
 				}
 			}
-			System.out.println(split2[i]);
+			if(split2[i].contains("(")){
+				
+			}
 		}
 	}
 
